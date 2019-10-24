@@ -10,6 +10,7 @@ const fetchBreedDescription = function(breedName, callback) {
   // console.log(typeof body);
 
     if (error) {
+      // this would be a broken API link case
       callback(`Failed to request details: ${error}`,null);
     }
 
@@ -20,7 +21,7 @@ const fetchBreedDescription = function(breedName, callback) {
     if (breed) {
       callback(null,breed.description);
     } else {
-      callback(`Failed to find breed ${breedName}`,null);
+      callback(`No breed ${breedName} for this endpoint`,null);
     }
   });
 
